@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convertisseur Euro FCFA en temps réel. Taux de change EUR vers XOF actualisé. 1 EUR = 655,957 FCFA (taux officiel BCEAO).">
+    <meta name="keywords" content="euro fcfa, eur xof, convertir euro fcfa, taux euro fcfa, 1 euro en fcfa, euro franc cfa">
+    <title>Euro FCFA - Convertisseur EUR vers XOF | Taux Officiel 2024</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6039546703440339"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .breadcrumb {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .converter-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+        }
+        
+        .rate-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .converter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .input-box label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .input-box input {
+            padding: 15px;
+            font-size: 1.2em;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        .quick-amounts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .amount-btn {
+            padding: 12px;
+            background: #f0f7ff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #667eea;
+            transition: all 0.3s;
+        }
+        
+        .amount-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+        }
+        
+        .content-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+        
+        .content-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .faq {
+            margin-top: 15px;
+        }
+        
+        .faq h3 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .adsense-placeholder {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .converter-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            .rate-highlight {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💶 Convertisseur Euro FCFA</h1>
+            <p>Taux de change EUR vers XOF en temps réel</p>
+            <div class="breadcrumb">
+                <a href="/">Accueil</a> › Euro FCFA
+            </div>
+        </header>
+
+        <div class="rate-highlight">
+            1 EUR = 655,957 FCFA (Taux officiel BCEAO)
+        </div>
+
+        <div class="adsense-placeholder">
+            📢 Espace Google AdSense
+        </div>
+
+        <div class="converter-box">
+            <h2 style="margin-bottom: 20px;">💱 Convertir Euro en FCFA</h2>
+            
+            <div class="converter-grid">
+                <div class="input-box">
+                    <label>Montant en Euro (€)</label>
+                    <input type="number" id="euroAmount" value="1" min="0" step="0.01">
+                </div>
+                
+                <div class="input-box">
+                    <label>Montant en FCFA</label>
+                    <input type="text" id="fcfaAmount" readonly>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 25px; margin-bottom: 15px; color: #333;">Montants fréquents :</h3>
+            <div class="quick-amounts">
+                <button class="amount-btn" onclick="setAmount(1)">1 EUR</button>
+                <button class="amount-btn" onclick="setAmount(10)">10 EUR</button>
+                <button class="amount-btn" onclick="setAmount(50)">50 EUR</button>
+                <button class="amount-btn" onclick="setAmount(100)">100 EUR</button>
+                <button class="amount-btn" onclick="setAmount(500)">500 EUR</button>
+                <button class="amount-btn" onclick="setAmount(1000)">1000 EUR</button>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>📊 Tableau de conversion Euro FCFA</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Euro (EUR)</th>
+                        <th>Franc CFA (XOF)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1 EUR</td><td>655,96 FCFA</td></tr>
+                    <tr><td>5 EUR</td><td>3 279,79 FCFA</td></tr>
+                    <tr><td>10 EUR</td><td>6 559,57 FCFA</td></tr>
+                    <tr><td>20 EUR</td><td>13 119,14 FCFA</td></tr>
+                    <tr><td>50 EUR</td><td>32 797,85 FCFA</td></tr>
+                    <tr><td>100 EUR</td><td>65 595,70 FCFA</td></tr>
+                    <tr><td>200 EUR</td><td>131 191,40 FCFA</td></tr>
+                    <tr><td>500 EUR</td><td>327 978,50 FCFA</td></tr>
+                    <tr><td>1000 EUR</td><td>655 957,00 FCFA</td></tr>
+                    <tr><td>5000 EUR</td><td>3 279 785,00 FCFA</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="adsense-placeholder">
+            📢 Espace Google AdSense
+        </div>
+
+        <div class="content-section">
+            <h2>📖 Tout savoir sur le taux Euro FCFA</h2>
+            
+            <p>Le <strong>taux de change Euro FCFA</strong> est fixe et déterminé par la Banque Centrale des États de l'Afrique de l'Ouest (BCEAO). Depuis 1999, 1 Euro = 655,957 Francs CFA.</p>
+            
+            <p>Cette parité fixe garantit une stabilité monétaire pour les 8 pays de la zone UEMOA : Bénin, Burkina Faso, Côte d'Ivoire, Guinée-Bissau, Mali, Niger, Sénégal et Togo.</p>
+            
+            <div class="faq">
+                <h3>💶 Pourquoi le taux Euro FCFA est-il fixe ?</h3>
+                <p>Le Franc CFA est arrimé à l'Euro par un accord monétaire entre la France et les pays de l'UEMOA. Cette stabilité facilite le commerce et protège contre l'inflation.</p>
+                
+                <h3>🏦 Où changer des Euros en FCFA ?</h3>
+                <p>Vous pouvez échanger vos Euros contre des FCFA dans les banques, bureaux de change, et même certains hôtels au Bénin, Sénégal, Côte d'Ivoire et autres pays de la zone UEMOA.</p>
+                
+                <h3>💳 Puis-je utiliser ma carte bancaire Euro en Afrique de l'Ouest ?</h3>
+                <p>Oui, les cartes Visa et Mastercard sont acceptées dans la plupart des distributeurs automatiques et commerces des grandes villes. Des frais de conversion peuvent s'appliquer.</p>
+                
+                <h3>📈 Le taux Euro FCFA peut-il changer ?</h3>
+                <p>Le taux officiel de 655,957 FCFA pour 1 Euro est fixe. Cependant, les banques et bureaux de change peuvent appliquer une commission, ce qui fait légèrement varier le taux appliqué.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔗 Conversions populaires</h2>
+            <p>
+                <a href="/" style="color: #667eea; text-decoration: none; margin-right: 15px;">→ Convertisseur toutes devises</a><br>
+                <a href="/pages/dollar-fcfa.html" style="color: #667eea; text-decoration: none; margin-right: 15px;">→ Dollar FCFA</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const rate = 655.957;
+        
+        function convert() {
+            const euroAmount = parseFloat(document.getElementById('euroAmount').value) || 0;
+            const fcfaAmount = euroAmount * rate;
+            document.getElementById('fcfaAmount').value = fcfaAmount.toLocaleString('fr-FR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }) + ' FCFA';
+        }
+        
+        function setAmount(amount) {
+            document.getElementById('euroAmount').value = amount;
+            convert();
+        }
+        
+        document.getElementById('euroAmount').addEventListener('input', convert);
+        
+        convert();
+    </script>
+</body>
+</html>
