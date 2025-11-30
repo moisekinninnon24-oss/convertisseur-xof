@@ -69,6 +69,11 @@ app.get('/api/rates', async (req, res) => {
     }
 });
 
+// Route pour le fichier de vérification Google
+app.get('/google5b9d6a33a63bfe61.html', (req, res) => {
+    res.sendFile(__dirname + '/public/google5b9d6a33a63bfe61.html');
+});
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
