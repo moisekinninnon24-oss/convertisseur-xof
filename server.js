@@ -74,6 +74,18 @@ app.get('/google5b9d6a33a63bfe61.html', (req, res) => {
     res.sendFile(__dirname + '/public/google5b9d6a33a63bfe61.html');
 });
 
+// Route pour le sitemap
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(__dirname + '/public/sitemap.xml');
+});
+
+// Route pour robots.txt
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.sendFile(__dirname + '/public/robots.txt');
+});
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
