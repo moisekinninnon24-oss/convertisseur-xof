@@ -86,6 +86,11 @@ app.get('/robots.txt', (req, res) => {
     res.sendFile(__dirname + '/public/robots.txt');
 });
 
+// Route pour l'article blog
+app.get('/blog/guide-franc-cfa', (req, res) => {
+    res.sendFile(__dirname + '/public/blog/guide-franc-cfa.html');
+});
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
