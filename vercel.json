@@ -32,6 +32,10 @@
       "dest": "/public/pages/dollar-fcfa.html"
     },
     {
+      "src": "/blog/guide-franc-cfa",
+      "dest": "/public/blog/guide-franc-cfa.html"
+    }, 
+    {
       "src": "/api/(.*)",
       "dest": "server.js"
     },
