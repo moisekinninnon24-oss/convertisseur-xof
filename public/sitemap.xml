@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Article Blog -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Article Blog -->
     <url>
         <loc>https://convertisseur-xof.vercel.app/blog/guide-franc-cfa</loc>
         <lastmod>2024-12-02</lastmod>
@@ -8,11 +13,6 @@
         <priority>0.8</priority>
     </url>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    
     <!-- Page d'accueil -->
     <url>
         <loc>https://convertisseur-xof.vercel.app/</loc>
@@ -20,7 +20,7 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-    
+
     <!-- Page Euro FCFA -->
     <url>
         <loc>https://convertisseur-xof.vercel.app/euro-fcfa</loc>
@@ -28,7 +28,7 @@
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
-    
+
     <!-- Page Dollar FCFA -->
     <url>
         <loc>https://convertisseur-xof.vercel.app/dollar-fcfa</loc>
@@ -36,5 +36,5 @@
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
-    
+
 </urlset>
