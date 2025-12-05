@@ -15,6 +15,11 @@ const CACHE_DURATION = 3600000;
 
 const API_URL = 'https://api.exchangerate-api.com/v4/latest/XOF';
 
+// Route alternative pour le sitemap (contourner le cache Google)
+app.get('/sitemap-v2.xml', (req, res) => {
+    res.redirect(301, '/sitemap.xml');
+});
+
 app.get('/api/rates', async (req, res) => {
     try {
         const now = Date.now();
