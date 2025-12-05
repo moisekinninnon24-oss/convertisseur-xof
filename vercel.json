@@ -12,16 +12,16 @@
   ],
   "routes": [
     {
-      "src": "/sitemap.xml",
-      "dest": "/public/sitemap.xml"
-    },
-    {
       "src": "/robots.txt",
       "dest": "/public/robots.txt"
     },
     {
       "src": "/google5b9d6a33a63bfe61.html",
       "dest": "/public/google5b9d6a33a63bfe61.html"
+    },
+    {
+      "src": "/sitemap(-v2|-[0-9]+)?\\.xml",
+      "dest": "server.js"
     },
     {
       "src": "/euro-fcfa",

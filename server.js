@@ -15,9 +15,47 @@ const CACHE_DURATION = 3600000;
 
 const API_URL = 'https://api.exchangerate-api.com/v4/latest/XOF';
 
-// Route alternative pour le sitemap (contourner le cache Google)
-app.get('/sitemap-v2.xml', (req, res) => {
-    res.redirect(301, '/sitemap.xml');
+// ============================================
+// SITEMAP DYNAMIQUE (généré à la demande)
+// ============================================
+app.get(['/sitemap.xml', '/sitemap-v2.xml', '/sitemap-:timestamp.xml'], (req, res) => {
+    const today = new Date().toISOString().split('T')[0];
+    
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://convertisseur-xof.vercel.app/</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://convertisseur-xof.vercel.app/euro-fcfa</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://convertisseur-xof.vercel.app/dollar-fcfa</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://convertisseur-xof.vercel.app/blog/guide-franc-cfa</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>`;
+    
+    // Headers pour éviter le cache
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    
+    res.status(200).send(sitemap);
 });
 
 app.get('/api/rates', async (req, res) => {
@@ -77,12 +115,6 @@ app.get('/api/rates', async (req, res) => {
 // Route pour le fichier de vérification Google
 app.get('/google5b9d6a33a63bfe61.html', (req, res) => {
     res.sendFile(__dirname + '/public/google5b9d6a33a63bfe61.html');
-});
-
-// Route pour le sitemap
-app.get('/sitemap.xml', (req, res) => {
-    res.type('application/xml');
-    res.sendFile(__dirname + '/public/sitemap.xml');
 });
 
 // Route pour robots.txt
