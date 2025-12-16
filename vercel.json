@@ -34,7 +34,11 @@
     {
       "src": "/blog/guide-franc-cfa",
       "dest": "/public/blog/guide-franc-cfa.html"
-    }, 
+    },
+    {
+      "src": "/blog/transfert-argent-benin",
+      "dest": "/public/blog/transfert-argent-benin.html"
+    },
     {
       "src": "/api/(.*)",
       "dest": "server.js"
