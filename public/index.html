@@ -82,23 +82,21 @@
         }
         
         .converter-row {
-            display: grid;
-            grid-template-columns: 2fr 1.5fr 80px 1.5fr 2fr;
-            gap: 15px;
-            align-items: end;
-            margin-bottom: 20px;
-        }
-        
-        .input-group {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
-        .input-label {
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 0.9em;
+        .input-amount {
+            flex: 2;
+            min-width: 150px;
+        }
+        
+        .input-currency {
+            flex: 1;
+            min-width: 120px;
         }
         
         .form-input {
@@ -124,7 +122,7 @@
             background: #667eea;
             color: white;
             border: none;
-            padding: 15px 20px;
+            padding: 15px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.5em;
@@ -134,7 +132,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            align-self: end;
+            flex-shrink: 0;
         }
         
         .swap-button:hover {
@@ -382,8 +380,23 @@
                 font-size: 1.5em;
             }
             
-            .form-row {
-                grid-template-columns: 1fr;
+            /* Convertisseur en vertical sur mobile */
+            .converter-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .input-amount,
+            .input-currency {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            .swap-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3em;
+                align-self: center;
             }
             
             .result-amount {
@@ -457,37 +470,48 @@
         <div class="card">
             <h2>💸 Convertir des devises</h2>
             
-            <div class="converter-form">
-                <div>
-                    <div class="form-label">Montant à convertir</div>
-                    <div class="form-row">
-                        <input type="number" id="amount-from" class="form-input" value="1" min="0" step="any">
-                        <select id="currency-from" class="form-input">
-                            <option value="XOF">XOF (FCFA)</option>
-                            <option value="EUR">EUR (€)</option>
-                            <option value="USD">USD ($)</option>
-                            <option value="GBP">GBP (£)</option>
-                            <option value="CAD">CAD ($)</option>
-                            <option value="CHF">CHF (Fr)</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <button class="swap-button" id="swap-btn">⇄</button>
-                
-                <div>
-                    <div class="form-label">Montant converti</div>
-                    <div class="form-row">
-                        <input type="number" id="amount-to" class="form-input" value="0.00" readonly>
-                        <select id="currency-to" class="form-input">
-                            <option value="EUR">EUR (€)</option>
-                            <option value="XOF">XOF (FCFA)</option>
-                            <option value="USD">USD ($)</option>
-                            <option value="GBP">GBP (£)</option>
-                            <option value="CAD">CAD ($)</option>
-                            <option value="CHF">CHF (Fr)</option>
-                        </select>
-                    </div>
+            <div class="converter-wrapper">
+                <!-- Layout horizontal : [Montant] [Devise] ⇄ [Devise] [Montant] -->
+                <div class="converter-row">
+                    <!-- Montant source -->
+                    <input type="number" 
+                           id="amount-from" 
+                           class="form-input input-amount" 
+                           placeholder="Entrez le montant"
+                           value="1000" 
+                           min="0" 
+                           step="any">
+                    
+                    <!-- Devise source -->
+                    <select id="currency-from" class="form-input input-currency">
+                        <option value="XOF">XOF (FCFA)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="USD">USD ($)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="CAD">CAD ($)</option>
+                        <option value="CHF">CHF (Fr)</option>
+                    </select>
+                    
+                    <!-- Bouton swap -->
+                    <button class="swap-button" id="swap-btn" type="button" title="Inverser les devises">⇄</button>
+                    
+                    <!-- Devise cible -->
+                    <select id="currency-to" class="form-input input-currency">
+                        <option value="EUR">EUR (€)</option>
+                        <option value="XOF">XOF (FCFA)</option>
+                        <option value="USD">USD ($)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="CAD">CAD ($)</option>
+                        <option value="CHF">CHF (Fr)</option>
+                    </select>
+                    
+                    <!-- Montant converti -->
+                    <input type="text" 
+                           id="amount-to" 
+                           class="form-input input-amount" 
+                           placeholder="Résultat"
+                           value="1.52" 
+                           readonly>
                 </div>
             </div>
             
