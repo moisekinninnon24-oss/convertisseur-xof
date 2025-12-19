@@ -26,7 +26,6 @@
             margin: 0 auto;
         }
         
-        /* HEADER */
         .header {
             text-align: center;
             color: white;
@@ -54,7 +53,6 @@
             font-size: 0.9em;
         }
         
-        /* SECTIONS CARDS */
         .card {
             background: white;
             border-radius: 12px;
@@ -70,13 +68,6 @@
             text-align: center;
         }
         
-        .card h3 {
-            color: #667eea;
-            margin: 30px 0 15px;
-            font-size: 1.4em;
-        }
-        
-        /* CONVERTISSEUR */
         .converter-wrapper {
             margin-bottom: 30px;
         }
@@ -170,7 +161,6 @@
             margin-top: 5px;
         }
         
-        /* TABLEAU */
         .rates-table {
             width: 100%;
             border-collapse: collapse;
@@ -204,7 +194,6 @@
             background: #e3f2fd;
         }
         
-        /* CONVERSIONS POPULAIRES */
         .popular-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -237,76 +226,6 @@
             font-weight: bold;
         }
         
-        /* AVANTAGES */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
-        }
-        
-        .feature-box {
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .feature-box h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-        
-        .feature-box p {
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        
-        .faq-item h3 {
-            color: #667eea;
-            font-size: 1.4em;
-            margin-bottom: 15px;
-        }
-        
-        .faq-item p, .faq-item ul {
-            color: #555;
-            font-size: 1.05em;
-            line-height: 1.9;
-        }
-        
-        .faq-item ul {
-            margin: 15px 0 15px 30px;
-        }
-        
-        .faq-item li {
-            margin-bottom: 10px;
-        }
-        
-        .info-box {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        
-        .info-box h4 {
-            color: #764ba2;
-            margin-bottom: 15px;
-        }
-        
-        /* CTA */
         .cta-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -344,7 +263,6 @@
             transform: scale(1.05);
         }
         
-        /* FOOTER */
         .footer {
             background: white;
             padding: 30px;
@@ -358,7 +276,6 @@
             margin-bottom: 10px;
         }
         
-        /* RESPONSIVE MOBILE */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -380,7 +297,6 @@
                 font-size: 1.5em;
             }
             
-            /* Convertisseur en vertical sur mobile */
             .converter-row {
                 flex-direction: column;
                 align-items: stretch;
@@ -416,10 +332,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .cta-box {
                 padding: 30px 20px;
             }
@@ -428,61 +340,23 @@
                 font-size: 1.5em;
             }
         }
-        
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.5em;
-            }
-            
-            .card {
-                padding: 15px;
-            }
-            
-            .card h2 {
-                font-size: 1.3em;
-            }
-            
-            .result-amount {
-                font-size: 1.8em;
-            }
-            
-            .rates-table {
-                font-size: 0.75em;
-            }
-            
-            .popular-value {
-                font-size: 1.5em;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        
-        <!-- HEADER -->
         <div class="header">
             <h1>💱 Convertisseur XOF</h1>
             <p>Taux de change en temps réel - Franc CFA (FCFA)</p>
             <span class="status-badge">✅ Taux à jour</span>
         </div>
         
-        <!-- 1. CONVERTISSEUR (L'OUTIL PRINCIPAL) -->
         <div class="card">
             <h2>💸 Convertir des devises</h2>
             
             <div class="converter-wrapper">
-                <!-- Layout horizontal : [Montant] [Devise] ⇄ [Devise] [Montant] -->
                 <div class="converter-row">
-                    <!-- Montant source -->
-                    <input type="number" 
-                           id="amount-from" 
-                           class="form-input input-amount" 
-                           placeholder="Entrez le montant"
-                           value="1" 
-                           min="0" 
-                           step="any">
+                    <input type="number" id="amount-from" class="form-input input-amount" placeholder="Entrez le montant" value="1" min="0" step="any">
                     
-                    <!-- Devise source -->
                     <select id="currency-from" class="form-input input-currency">
                         <option value="XOF">XOF (FCFA)</option>
                         <option value="EUR">EUR (€)</option>
@@ -492,10 +366,8 @@
                         <option value="CHF">CHF (Fr)</option>
                     </select>
                     
-                    <!-- Bouton swap -->
-                    <button class="swap-button" id="swap-btn" type="button" title="Inverser les devises">⇄</button>
+                    <button class="swap-button" id="swap-btn" type="button">⇄</button>
                     
-                    <!-- Devise cible -->
                     <select id="currency-to" class="form-input input-currency">
                         <option value="EUR">EUR (€)</option>
                         <option value="XOF">XOF (FCFA)</option>
@@ -505,24 +377,17 @@
                         <option value="CHF">CHF (Fr)</option>
                     </select>
                     
-                    <!-- Montant converti -->
-                    <input type="text" 
-                           id="amount-to" 
-                           class="form-input input-amount" 
-                           placeholder="Résultat"
-                           value="0.00" 
-                           readonly>
+                    <input type="text" id="amount-to" class="form-input input-amount" placeholder="Résultat" value="0.00" readonly>
                 </div>
             </div>
             
             <div class="result-box">
                 <div class="result-amount" id="result-display">0,00 €</div>
-                <div class="result-rate" id="rate-display">Taux de change : 1 XOF = 657.894737 EUR</div>
-                <div class="result-date" id="date-display">Mis à jour : 18/12/2025 11:16:25</div>
+                <div class="result-rate" id="rate-display">Taux de change : 1 XOF = 0.001524 EUR</div>
+                <div class="result-date" id="date-display">Mis à jour : 19/12/2025</div>
             </div>
         </div>
         
-        <!-- 2. TABLEAU DES TAUX -->
         <div class="card">
             <h2>📊 Tableau des taux de change</h2>
             <table class="rates-table">
@@ -538,276 +403,73 @@
                     <tr>
                         <td>Euro</td>
                         <td><strong>EUR</strong></td>
-                        <td>657.89</td>
-                        <td>1.5200</td>
+                        <td>655.96</td>
+                        <td>1.52</td>
                     </tr>
                     <tr>
                         <td>Dollar américain</td>
                         <td><strong>USD</strong></td>
                         <td>558.66</td>
-                        <td>1.7900</td>
+                        <td>1.79</td>
                     </tr>
                     <tr>
                         <td>Livre sterling</td>
                         <td><strong>GBP</strong></td>
                         <td>746.27</td>
-                        <td>1.3400</td>
+                        <td>1.34</td>
                     </tr>
                     <tr>
                         <td>Dollar canadien</td>
                         <td><strong>CAD</strong></td>
                         <td>404.86</td>
-                        <td>2.4700</td>
+                        <td>2.47</td>
                     </tr>
                     <tr>
                         <td>Franc suisse</td>
                         <td><strong>CHF</strong></td>
                         <td>699.30</td>
-                        <td>1.4300</td>
+                        <td>1.43</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
-        <!-- 3. CONVERSIONS POPULAIRES -->
         <div class="card">
             <h2>🔥 Conversions les plus recherchées</h2>
             <div class="popular-grid">
                 <div class="popular-item">
                     <div class="popular-title">100 EUR en XOF</div>
-                    <div class="popular-value">65 789,47 FCFA</div>
+                    <div class="popular-value">65 596 FCFA</div>
                 </div>
                 <div class="popular-item">
                     <div class="popular-title">1000 USD en XOF</div>
-                    <div class="popular-value">558 659,22 FCFA</div>
+                    <div class="popular-value">558 660 FCFA</div>
                 </div>
                 <div class="popular-item">
-                    <div class="popular-title">100,000 XOF en EUR</div>
+                    <div class="popular-title">100 000 XOF en EUR</div>
                     <div class="popular-value">152,00 €</div>
                 </div>
                 <div class="popular-item">
-                    <div class="popular-title">50,000 XOF en USD</div>
+                    <div class="popular-title">50 000 XOF en USD</div>
                     <div class="popular-value">89,50 $</div>
                 </div>
             </div>
         </div>
         
-        <!-- 4. COMPRENDRE LE FRANC CFA -->
-        <div class="card">
-            <h2>📖 Comprendre le Franc CFA (XOF)</h2>
-            <p style="font-size: 1.05em; line-height: 1.9; color: #555; margin-bottom: 20px;">
-                Le Franc CFA de l'Afrique de l'Ouest (XOF) est la monnaie officielle de 8 pays membres de l'Union Économique et Monétaire Ouest Africaine (UEMOA) : Bénin, Burkina Faso, Côte d'Ivoire, Guinée-Bissau, Mali, Niger, Sénégal et Togo. Cette monnaie commune facilite les échanges commerciaux et la stabilité économique dans la région.
-            </p>
-            <p style="font-size: 1.05em; line-height: 1.9; color: #555; margin-bottom: 20px;">
-                Le taux de change entre l'euro et le franc CFA est fixe depuis 1999 : <strong>1 EUR = 655,957 FCFA</strong>. Cette parité fixe assure une stabilité monétaire et facilite les calculs pour les entreprises et les particuliers effectuant des transactions entre l'Europe et l'Afrique de l'Ouest.
-            </p>
-            <p style="font-size: 1.05em; line-height: 1.9; color: #555;">
-                Pour les autres devises comme le dollar américain (USD), la livre sterling (GBP) ou le dollar canadien (CAD), les taux fluctuent quotidiennement en fonction des marchés financiers internationaux. Notre convertisseur vous permet de suivre ces variations et d'effectuer vos conversions avec précision.
-            </p>
-            
-            <div class="info-box" style="margin-top: 30px;">
-                <h4>Caractéristiques principales :</h4>
-                <ul style="margin-left: 20px; color: #555; line-height: 1.8;">
-                    <li><strong>Taux fixe avec l'Euro</strong> : 1 EUR = 655,957 XOF (taux officiel)</li>
-                    <li><strong>Zone monétaire</strong> : UEMOA (Union Économique et Monétaire Ouest-Africaine)</li>
-                    <li><strong>Émis par</strong> : BCEAO (Banque Centrale des États de l'Afrique de l'Ouest)</li>
-                    <li><strong>Code ISO</strong> : XOF</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- 5. FAQ COMPLÈTE -->
-        <div class="card">
-            <h2>❓ Tout savoir sur le Franc CFA et les conversions de devises</h2>
-            
-            <div class="faq-item">
-                <h3>💶 Qu'est-ce que le Franc CFA (XOF) ?</h3>
-                <p>
-                    Le Franc CFA de l'Afrique de l'Ouest (code ISO: XOF) est la monnaie officielle utilisée par 8 pays membres de l'Union Économique et Monétaire Ouest Africaine (UEMOA). Ces pays sont : le Bénin, le Burkina Faso, la Côte d'Ivoire, la Guinée-Bissau, le Mali, le Niger, le Sénégal et le Togo. Cette monnaie commune représente environ 150 millions de personnes et facilite les échanges commerciaux dans toute la région ouest-africaine.
-                </p>
-                <p style="margin-top: 15px;">
-                    Le sigle "CFA" signifiait initialement "Colonies Françaises d'Afrique" lors de sa création en 1945, puis "Communauté Financière Africaine" après les indépendances. La monnaie est émise par la Banque Centrale des États de l'Afrique de l'Ouest (BCEAO), dont le siège est situé à Dakar, au Sénégal.
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>📊 Pourquoi le taux EUR/FCFA est-il fixe à 655,957 ?</h3>
-                <p>
-                    Le taux de change entre l'euro et le franc CFA est fixé depuis le 1er janvier 1999 à <strong>1 EUR = 655,957 FCFA</strong>. Cette parité fixe découle de l'accord monétaire entre la France et les pays de la zone franc. Avant 1999, le FCFA était arrimé au franc français au taux de 1 FRF = 100 FCFA. Lors de la transition vers l'euro, ce taux historique a été maintenu en le convertissant selon la parité franco-européenne officielle.
-                </p>
-                <p style="margin-top: 15px;">
-                    Cette stabilité monétaire offre plusieurs avantages : elle facilite le commerce international, protège contre l'inflation excessive, et donne une prévisibilité aux investisseurs et aux entreprises. Le Trésor français garantit la convertibilité illimitée du FCFA en euros, ce qui renforce la confiance dans cette monnaie.
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>🌍 Comment envoyer de l'argent vers un pays utilisant le FCFA ?</h3>
-                <p>Il existe plusieurs méthodes pour transférer de l'argent vers les pays de la zone FCFA, chacune avec ses avantages et inconvénients :</p>
-                <ul>
-                    <li><strong>Services de transfert en ligne (Wise, WorldRemit)</strong> : Les frais les plus bas (0,5-2%), taux de change équitable, transfert en 1-3 jours. Idéal pour les transferts réguliers.</li>
-                    <li><strong>Western Union et MoneyGram</strong> : Réseau mondial, retrait en espèces possible, transfert quasi-instantané, mais frais plus élevés (5-10%).</li>
-                    <li><strong>Virements bancaires SWIFT</strong> : Sécurisé pour les gros montants, mais lent (3-7 jours) et coûteux (25-50 EUR de frais).</li>
-                    <li><strong>Mobile Money</strong> : Solution moderne et rapide, le bénéficiaire reçoit l'argent directement sur son téléphone mobile (MTN, Moov, Orange Money).</li>
-                </ul>
-                <p style="margin-top: 15px;">
-                    Pour économiser sur les frais, comparez toujours plusieurs services avant d'envoyer. Pour un transfert de 500 EUR, la différence de frais entre services peut atteindre 30-40 EUR !
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>💳 Puis-je utiliser ma carte bancaire européenne dans la zone FCFA ?</h3>
-                <p>
-                    Oui ! Les cartes Visa et Mastercard fonctionnent dans la plupart des distributeurs automatiques (ATM) et commerces des grandes villes de la zone FCFA. Voici ce qu'il faut savoir :
-                </p>
-                <div class="info-box">
-                    <h4>Points importants :</h4>
-                    <ul style="margin-left: 20px; color: #555;">
-                        <li><strong>Frais de retrait</strong> : Généralement 3-5 EUR par transaction + 1-3% de frais de change de votre banque</li>
-                        <li><strong>Limites de retrait</strong> : 200 000 à 300 000 FCFA par transaction (environ 300-450 EUR)</li>
-                        <li><strong>Sécurité</strong> : Prévenez toujours votre banque avant de voyager pour éviter le blocage de carte</li>
-                        <li><strong>Conseils</strong> : Retirez des montants importants moins souvent pour minimiser les frais fixes</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <h3>✈️ Quel budget prévoir pour voyager dans la zone FCFA ?</h3>
-                <p>Le coût de la vie varie selon les pays et les villes, mais voici des estimations budgétaires par jour et par personne :</p>
-                <table class="rates-table" style="margin-top: 20px;">
-                    <thead>
-                        <tr>
-                            <th>Type de voyage</th>
-                            <th>Budget/jour (EUR)</th>
-                            <th>Budget/jour (FCFA)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Routard / Backpacker</strong></td>
-                            <td>20-35 EUR</td>
-                            <td>13 000-23 000 FCFA</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Voyageur moyen</strong></td>
-                            <td>50-80 EUR</td>
-                            <td>33 000-52 000 FCFA</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Confort / Affaires</strong></td>
-                            <td>100-200 EUR</td>
-                            <td>66 000-131 000 FCFA</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Luxe</strong></td>
-                            <td>200+ EUR</td>
-                            <td>131 000+ FCFA</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="margin-top: 15px;">
-                    <strong>Conseils d'économie</strong> : Mangez dans les restaurants locaux ("maquis"), utilisez les transports en commun, et négociez les prix dans les marchés. Vous pouvez facilement vivre confortablement avec 40-50 EUR par jour.
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>🔄 Comment fonctionne le Mobile Money dans la zone FCFA ?</h3>
-                <p>Le Mobile Money a révolutionné les transactions financières en Afrique de l'Ouest. Les principaux opérateurs sont :</p>
-                <ul>
-                    <li><strong>MTN Mobile Money</strong> : Le leader avec la plus grande couverture</li>
-                    <li><strong>Moov Money</strong> : Présent dans plusieurs pays de l'UEMOA</li>
-                    <li><strong>Orange Money</strong> : Service robuste avec transferts internationaux</li>
-                    <li><strong>Wave</strong> : Nouveau service avec frais très réduits</li>
-                </ul>
-                <p style="margin-top: 15px;">
-                    Avec le Mobile Money, vous pouvez envoyer et recevoir de l'argent, payer des factures, acheter du crédit téléphonique, et même épargner. Les transferts sont instantanés et les frais généralement inférieurs aux méthodes traditionnelles. Vous pouvez retirer l'argent dans n'importe quel point de vente agréé (boutiques, pharmacies, stations-service).
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>💼 Peut-on investir ou faire des affaires dans la zone FCFA ?</h3>
-                <p>
-                    Absolument ! La zone UEMOA offre de nombreuses opportunités d'investissement. La stabilité monétaire du FCFA, arrimé à l'euro, réduit considérablement le risque de change pour les investisseurs européens. Les secteurs porteurs incluent :
-                </p>
-                <ul>
-                    <li><strong>Agriculture et agro-industrie</strong> : Transformation de produits locaux (cacao, noix de cajou, mangues)</li>
-                    <li><strong>Technologies et télécommunications</strong> : Forte croissance du secteur numérique</li>
-                    <li><strong>Énergie renouvelable</strong> : Solaire, éolien, biomasse</li>
-                    <li><strong>Immobilier et construction</strong> : Urbanisation rapide</li>
-                    <li><strong>Tourisme</strong> : Potentiel énorme encore sous-exploité</li>
-                </ul>
-                <p style="margin-top: 15px;">
-                    L'UEMOA a harmonisé ses codes d'investissement pour faciliter l'implantation d'entreprises. Vous bénéficiez de la liberté de circulation des capitaux, de rapatriement des bénéfices sans restriction, et d'exonérations fiscales selon les secteurs.
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>📱 Quelles sont les meilleures applications pour convertir EUR/FCFA ?</h3>
-                <p>
-                    Notre convertisseur en ligne est accessible depuis n'importe quel appareil sans installation. Vous pouvez ajouter notre site à votre écran d'accueil pour un accès instantané. D'autres applications populaires incluent :
-                </p>
-                <ul>
-                    <li><strong>XE Currency</strong> : L'application de référence, mise à jour en temps réel</li>
-                    <li><strong>Currency Converter Plus</strong> : Interface simple, fonctionne hors ligne</li>
-                    <li><strong>Easy Currency</strong> : Calculs rapides, historique des taux</li>
-                </ul>
-                <p style="margin-top: 15px;">
-                    <strong>Avantage de notre convertisseur</strong> : Pas besoin d'installation, accessible partout, mise à jour quotidienne, et informations complémentaires sur la zone FCFA.
-                </p>
-            </div>
-        </div>
-        
-        <!-- 6. POURQUOI UTILISER NOTRE CONVERTISSEUR -->
-        <div class="card">
-            <h2>Pourquoi utiliser notre convertisseur XOF ?</h2>
-            
-            <div class="features-grid">
-                <div class="feature-box">
-                    <h3>⚡ Taux en temps réel</h3>
-                    <p>
-                        Nos taux de change sont mis à jour quotidiennement pour vous garantir les conversions les plus précises. Le taux EUR/XOF est fixé par la BCEAO (Banque Centrale des États de l'Afrique de l'Ouest) à 655.957 FCFA pour 1 euro.
-                    </p>
-                </div>
-                
-                <div class="feature-box">
-                    <h3>🎯 Précision maximale</h3>
-                    <p>
-                        Notre calculateur prend en compte tous les facteurs importants pour vous donner une estimation exacte. Que vous prévoyiez un voyage, un transfert d'argent ou un investissement, vous saurez exactement combien vous recevrez.
-                    </p>
-                </div>
-                
-                <div class="feature-box">
-                    <h3>🔒 Gratuit et sécurisé</h3>
-                    <p>
-                        Notre service est 100% gratuit, sans inscription requise. Vos données ne sont jamais stockées ni partagées. Utilisez notre convertisseur en toute confiance, autant de fois que nécessaire.
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 7. CTA - BESOIN D'AIDE -->
         <div class="cta-box">
             <h3>Besoin d'aide avec vos conversions ?</h3>
-            <p>
-                Notre convertisseur est gratuit, précis et mis à jour quotidiennement. Utilisez-le autant de fois que nécessaire pour tous vos calculs de change EUR/FCFA et autres devises.
-            </p>
-            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="cta-button">
-                ⬆️ Retour au convertisseur
-            </a>
+            <p>Notre convertisseur est gratuit, précis et mis à jour quotidiennement. Utilisez-le autant de fois que nécessaire pour tous vos calculs de change EUR/FCFA et autres devises.</p>
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="cta-button">⬆️ Retour au convertisseur</a>
         </div>
         
-        <!-- 8. FOOTER -->
         <div class="footer">
             <p><strong>© 2025 Convertisseur XOF</strong> - Taux de change indicatifs mis à jour en temps réel</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">
-                Les taux affichés sont fournis à titre indicatif. Pour des transactions financières importantes, veuillez vérifier les taux auprès de votre banque ou établissement financier.
-            </p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Les taux affichés sont fournis à titre indicatif. Pour des transactions financières importantes, veuillez vérifier les taux auprès de votre banque ou établissement financier.</p>
         </div>
-        
     </div>
     
     <script>
-        // Taux de change (fictifs pour la démo - à remplacer par des taux réels via API)
-        const rates = {
+        var exchangeRates = {
             'XOF': 1,
             'EUR': 655.957,
             'USD': 558.66,
@@ -816,70 +478,72 @@
             'CHF': 699.30
         };
         
-        const currencySymbols = {
+        var currencySymbols = {
             'XOF': 'FCFA',
             'EUR': '€',
-            'USD': ',
+            'USD': '$',
             'GBP': '£',
-            'CAD': ',
+            'CAD': '$',
             'CHF': 'Fr'
         };
         
-        const amountFrom = document.getElementById('amount-from');
-        const amountTo = document.getElementById('amount-to');
-        const currencyFrom = document.getElementById('currency-from');
-        const currencyTo = document.getElementById('currency-to');
-        const swapBtn = document.getElementById('swap-btn');
-        const resultDisplay = document.getElementById('result-display');
-        const rateDisplay = document.getElementById('rate-display');
-        const dateDisplay = document.getElementById('date-display');
-        
-        function convert() {
-            const amount = parseFloat(amountFrom.value) || 0;
-            const from = currencyFrom.value;
-            const to = currencyTo.value;
+        function convertCurrency() {
+            var amountFrom = document.getElementById('amount-from');
+            var amountTo = document.getElementById('amount-to');
+            var currencyFrom = document.getElementById('currency-from');
+            var currencyTo = document.getElementById('currency-to');
+            var resultDisplay = document.getElementById('result-display');
+            var rateDisplay = document.getElementById('rate-display');
+            var dateDisplay = document.getElementById('date-display');
             
-            // Conversion: montant -> XOF -> devise cible
-            const amountInXOF = amount * rates[from];
-            const result = amountInXOF / rates[to];
+            var amount = parseFloat(amountFrom.value) || 0;
+            var fromCurr = currencyFrom.value;
+            var toCurr = currencyTo.value;
+            
+            var amountInXOF = amount * exchangeRates[fromCurr];
+            var result = amountInXOF / exchangeRates[toCurr];
             
             amountTo.value = result.toFixed(2);
             
-            // Affichage du résultat
-            const symbol = currencySymbols[to];
+            var symbol = currencySymbols[toCurr];
             resultDisplay.textContent = result.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ' + symbol;
             
-            // Affichage du taux
-            const rate = rates[to] / rates[from];
-            rateDisplay.textContent = `Taux de change : 1 ${from} = ${rate.toFixed(6)} ${to}`;
+            var rate = exchangeRates[toCurr] / exchangeRates[fromCurr];
+            rateDisplay.textContent = 'Taux de change : 1 ' + fromCurr + ' = ' + rate.toFixed(6) + ' ' + toCurr;
             
-            // Date et heure actuelles
-            const now = new Date();
-            dateDisplay.textContent = `Mis à jour : ${now.toLocaleDateString('fr-FR')} ${now.toLocaleTimeString('fr-FR')}`;
+            var now = new Date();
+            dateDisplay.textContent = 'Mis à jour : ' + now.toLocaleDateString('fr-FR') + ' ' + now.toLocaleTimeString('fr-FR');
         }
         
-        function swap() {
-            // Échange les devises
-            const tempCurrency = currencyFrom.value;
+        function swapCurrencies() {
+            var amountFrom = document.getElementById('amount-from');
+            var amountTo = document.getElementById('amount-to');
+            var currencyFrom = document.getElementById('currency-from');
+            var currencyTo = document.getElementById('currency-to');
+            
+            var tempCurr = currencyFrom.value;
             currencyFrom.value = currencyTo.value;
-            currencyTo.value = tempCurrency;
+            currencyTo.value = tempCurr;
             
-            // Échange les montants
-            const tempAmount = amountFrom.value;
+            var tempAmount = amountFrom.value;
             amountFrom.value = amountTo.value;
-            amountTo.value = tempAmount;
             
-            convert();
+            convertCurrency();
         }
         
-        // Event listeners
-        amountFrom.addEventListener('input', convert);
-        currencyFrom.addEventListener('change', convert);
-        currencyTo.addEventListener('change', convert);
-        swapBtn.addEventListener('click', swap);
-        
-        // Conversion initiale au chargement
-        convert();
+        window.addEventListener('load', function() {
+            var amountFrom = document.getElementById('amount-from');
+            var currencyFrom = document.getElementById('currency-from');
+            var currencyTo = document.getElementById('currency-to');
+            var swapBtn = document.getElementById('swap-btn');
+            
+            amountFrom.addEventListener('input', convertCurrency);
+            currencyFrom.addEventListener('change', convertCurrency);
+            currencyTo.addEventListener('change', convertCurrency);
+            swapBtn.addEventListener('click', swapCurrencies);
+            
+            convertCurrency();
+        });
     </script>
 </body>
 </html>
