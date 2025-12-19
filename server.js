@@ -128,6 +128,11 @@ app.get('/blog/guide-franc-cfa', (req, res) => {
     res.sendFile(__dirname + '/public/blog/guide-franc-cfa.html');
 });
 
+// Route pour la page blog
+app.get('/blog', (req, res) => {
+    res.sendFile(__dirname + '/public/blog.html');
+});
+
 // Route pour l'article transfert d'argent
 app.get('/blog/transfert-argent-benin', (req, res) => {
     res.sendFile(__dirname + '/public/blog/transfert-argent-benin.html');
