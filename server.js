@@ -30,25 +30,13 @@ app.get(['/sitemap.xml', '/sitemap-v2.xml', '/sitemap-:timestamp.xml'], (req, re
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://convertisseur-xof.vercel.app/euro-fcfa</loc>
+        <loc>https://convertisseur-xof.vercel.app/blog</loc>
         <lastmod>${today}</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://convertisseur-xof.vercel.app/dollar-fcfa</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://convertisseur-xof.vercel.app/blog/guide-franc-cfa</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 </urlset>`;
-    
+
     // Headers pour éviter le cache
     res.setHeader('Content-Type', 'application/xml; charset=utf-8');
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -61,7 +49,7 @@ app.get(['/sitemap.xml', '/sitemap-v2.xml', '/sitemap-:timestamp.xml'], (req, re
 app.get('/api/rates', async (req, res) => {
     try {
         const now = Date.now();
-        
+
         if (cachedRates && lastUpdate && (now - lastUpdate) < CACHE_DURATION) {
             return res.json({
                 rates: cachedRates,
@@ -93,7 +81,7 @@ app.get('/api/rates', async (req, res) => {
 
     } catch (error) {
         console.error('Erreur:', error);
-        
+
         const defaultRates = {
             EUR: 655.957,
             USD: 615.234,
@@ -102,7 +90,7 @@ app.get('/api/rates', async (req, res) => {
             CHF: 695.234,
             XOF: 1
         };
-        
+
         res.json({
             rates: defaultRates,
             lastUpdate: new Date().toISOString(),
@@ -123,21 +111,12 @@ app.get('/robots.txt', (req, res) => {
     res.sendFile(__dirname + '/public/robots.txt');
 });
 
-// Route pour l'article blog
-app.get('/blog/guide-franc-cfa', (req, res) => {
-    res.sendFile(__dirname + '/public/blog/guide-franc-cfa.html');
-});
-
 // Route pour la page blog
 app.get('/blog', (req, res) => {
     res.sendFile(__dirname + '/public/blog.html');
 });
 
-// Route pour l'article transfert d'argent
-app.get('/blog/transfert-argent-benin', (req, res) => {
-    res.sendFile(__dirname + '/public/blog/transfert-argent-benin.html');
-});
-
+// Route pour la page d'accueil
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
