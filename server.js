@@ -15,35 +15,6 @@ const CACHE_DURATION = 3600000;
 
 const API_URL = 'https://api.exchangerate-api.com/v4/latest/XOF';
 
-// ============================================
-// SITEMAP DYNAMIQUE (généré à la demande)
-// ============================================
-app.get(['/sitemap.xml', '/sitemap-v2.xml', '/sitemap-:timestamp.xml'], (req, res) => {
-    const today = new Date().toISOString().split('T')[0];
-    
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://convertisseur-xof.vercel.app/</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://convertisseur-xof.vercel.app/blog</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-</urlset>`;
-
-    // Headers pour éviter le cache
-    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-    res.setHeader('Pragma', 'no-cache');
-    res.setHeader('Expires', '0');
-    
-    res.status(200).send(sitemap);
 });
 
 app.get('/api/rates', async (req, res) => {
@@ -109,6 +80,12 @@ app.get('/google5b9d6a33a63bfe61.html', (req, res) => {
 app.get('/robots.txt', (req, res) => {
     res.type('text/plain');
     res.sendFile(__dirname + '/public/robots.txt');
+});
+
+// Route pour le sitemap statique
+app.get(['/sitemap.xml', '/sitemap-v2.xml'], (req, res) => {
+    res.type('application/xml');
+    res.sendFile(__dirname + '/public/sitemap.xml');
 });
 
 // Route pour la page blog
