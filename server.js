@@ -15,8 +15,6 @@ const CACHE_DURATION = 3600000;
 
 const API_URL = 'https://api.exchangerate-api.com/v4/latest/XOF';
 
-});
-
 app.get('/api/rates', async (req, res) => {
     try {
         const now = Date.now();

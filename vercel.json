@@ -21,7 +21,7 @@
     },
     {
       "src": "/sitemap(-v2|-[0-9]+)?\\.xml",
-      "dest": "server.js"
+      "dest": "/public/sitemap.xml"
     },
     {
       "src": "/blog",
@@ -36,3 +36,4 @@
       "dest": "server.js"
     }
   ]
+}
