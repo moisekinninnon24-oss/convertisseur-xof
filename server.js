@@ -82,8 +82,9 @@ app.get('/robots.txt', (req, res) => {
 
 // Route pour le sitemap statique
 app.get(['/sitemap.xml', '/sitemap-v2.xml', '/sitemap-2025.xml'], (req, res) => {
-    res.type('application/xml');
-    res.sendFile(__dirname + '/public/sitemap.xml');
+    res.type('application/xml; charset=UTF-8');
+    const filename = req.path.substring(1); // Enlève le "/" du début
+    res.sendFile(__dirname + '/public/' + filename);
 });
 
 // Route pour la page blog
