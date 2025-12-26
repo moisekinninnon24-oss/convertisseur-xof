@@ -81,7 +81,7 @@ app.get('/robots.txt', (req, res) => {
 });
 
 // Route pour le sitemap statique
-app.get(['/sitemap.xml', '/sitemap-v2.xml'], (req, res) => {
+app.get(['/sitemap.xml', '/sitemap-v2.xml', '/sitemap-2025.xml'], (req, res) => {
     res.type('application/xml');
     res.sendFile(__dirname + '/public/sitemap.xml');
 });
