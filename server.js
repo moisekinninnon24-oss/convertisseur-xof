@@ -83,7 +83,8 @@ app.get('/robots.txt', (req, res) => {
 // Route pour le sitemap statique
 app.get(['/sitemap.xml', '/sitemap-v2.xml', '/sitemap-2025.xml'], (req, res) => {
     res.type('application/xml; charset=UTF-8');
-    const filename = req.path.substring(1); // Enlève le "/" du début
+    const filename = req.path.substring(1);
+    res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
     res.sendFile(__dirname + '/public/' + filename);
 });
 
