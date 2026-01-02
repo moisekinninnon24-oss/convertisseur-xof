@@ -20,7 +20,15 @@
       "dest": "/public/google5b9d6a33a63bfe61.html"
     },
     {
-      "src": "/sitemap(-v2|-2025|-[0-9]+)?\\.xml",
+      "src": "/sitemap\\.xml",
+      "dest": "/public/sitemap.xml"
+    },
+    {
+      "src": "/sitemap-2025\\.xml",
+      "dest": "/public/sitemap-2025.xml"
+    },
+    {
+      "src": "/sitemap-v2\\.xml",
       "dest": "/public/sitemap.xml"
     },
     {
