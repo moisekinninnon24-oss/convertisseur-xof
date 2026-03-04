@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://convertisseur-xof.vercel.app/sitemap.xml
+Sitemap: https://convertisseur-fcfa.vercel.app/sitemap.xml
